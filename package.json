@@ -50,10 +50,11 @@
     "build-storybook": "build-storybook",
     "prebuild:prod": "npm run rimraf",
     "prebuild:dev": "npm run rimraf",
-    "build:prod": "cross-env NODE_ENV=production run-p build:js build:css",
-    "build:dev": "cross-env NODE_ENV=development run-p build:js build:css",
+    "build:prod": "cross-env NODE_ENV=production run-p build:js build:css && npm run copy",
+    "build:dev": "cross-env NODE_ENV=development run-p build:js build:css && npm run copy",
     "build:css": "lessc style/index.less dist/global.css",
     "build:js": "rollup -c",
+    "copy": "node ./scripts/copy.js",
     "rimraf": "rimraf dist",
     "test": "jest",
     "component": "plop"

@@ -101,20 +101,3 @@ export default fs.readdirSync(root)
             console.error(e)
         }
     })
-    .concat({
-        input: path.resolve(__dirname, 'components/index.js'),
-        output: [
-            {
-                exports: 'auto',
-                file: path.resolve(__dirname, 'dist/lib/index.js'),
-                format: 'cjs'
-            },
-            {
-                exports: 'auto',
-                file: path.resolve(__dirname, 'dist/lib/index.ejs'),
-                format: 'es'
-            }
-        ],
-        acornInjectPlugins,
-        plugins
-    })

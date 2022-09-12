@@ -1,4 +1,3 @@
-import { StyleProvider } from '../components'
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -12,8 +11,8 @@ export const parameters = {
 console.log(process.env.STORYBOOK_THEME)
 export const decorators = [
   Story => (
-    <StyleProvider theme={process.env.STORYBOOK_THEME}>
+    <div className={process.env.STORYBOOK_THEME}>
       <Story />
-    </StyleProvider>
+    </div>
   )
 ]
